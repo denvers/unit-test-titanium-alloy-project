@@ -1,3 +1,5 @@
 My approach to fully automate unit tests in Titanium Alloy projects.
 
 1) Create a new Titanium Alloy project
+
+2) Integrate /app/lib/behave.js and call him from alloy.js
