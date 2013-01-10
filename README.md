@@ -12,29 +12,29 @@ Behave.js runs the tests (specs) while the app runs in the simulator so mocking 
 
 **Please note the JUnit XML file is written to the temp folder on my Mac. If you're not on a Mac, you need to change that location so the XML file can be written.** 
 
-#Let's go
+##Let's go
 
 **1) Create a new Titanium Alloy project**
 
-**2) Integrate /app/lib/behave.js and call him from alloy.js**
+**2) Integrate `/app/lib/behave.js` and call him from `alloy.js`**
 
 See changeset: [https://github.com/denvers/unit-test-titanium-alloy-project/commit/cf653d746b4b9c46a278921fc68e143401d9b9ef](https://github.com/denvers/unit-test-titanium-alloy-project/commit/cf653d746b4b9c46a278921fc68e143401d9b9ef)
 
-**3) Create a test (called a spec) in /app/assets/spec/**
+**3) Create a test (called a spec) in `/app/assets/spec/`**
 
-**4) Let behave.js run your spec by adding a require in your alloy.js file**
+**4) Let `behave.js` run your spec by adding a require in your `alloy.js` file**
 
--> (3+4) See commit: [https://github.com/denvers/unit-test-titanium-alloy-project/commit/c98d7fbcd2e8d32eefed683e2e6783efa4a10ed0](https://github.com/denvers/unit-test-titanium-alloy-project/commit/c98d7fbcd2e8d32eefed683e2e6783efa4a10ed0)
+(3+4) See changeset: [https://github.com/denvers/unit-test-titanium-alloy-project/commit/c98d7fbcd2e8d32eefed683e2e6783efa4a10ed0](https://github.com/denvers/unit-test-titanium-alloy-project/commit/c98d7fbcd2e8d32eefed683e2e6783efa4a10ed0)
 
-When compiling your app, you'd see in your console that the JUnit XML file is written to /tmp/junit-buildresults.xml ([http://cl.ly/image/2J2e1y3H2t3b](http://cl.ly/image/2J2e1y3H2t3b))
+When compiling your app, you'd see in your console that the JUnit XML file is written to `/tmp/junit-buildresults.xml` ([http://cl.ly/image/2J2e1y3H2t3b](http://cl.ly/image/2J2e1y3H2t3b))
 
-#Now the automation part…
+##Now the automation part…
 
 I use Jenkins as a Continuous Integration buildserver. Other buildservers who are able to interpret JUnit XML files should work also.
 
 My code is pushed to a private Github repository. You should configure your Jenkins job to let Jenkins read your project files. I bet you know how to fix this yourself ;-)
 
-1) I created a job for running the tests in Jenkins. The interesting parts are:
+**1) I created a job for running the tests in Jenkins. The interesting parts are:**
 
 a) A buildstep with some magic commands to build the app and have the unit tests executed:
 
