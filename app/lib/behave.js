@@ -186,8 +186,9 @@ exports.andSetup = function(global) {
 function writeJUnitXMLFile(tests)
 {
 	// Build XML string
-	var xmlString = '';	
-	xmlString = '<testsuite name="Main">\n';
+	var xmlString = '<?xml version="1.0" ?>';
+	xmlString += '<testsuites>\n';
+	xmlString += '<testsuite name="Main">\n';	
 		
 	_.each(tests, function(test, index) {
 		
@@ -195,7 +196,9 @@ function writeJUnitXMLFile(tests)
 		{
 			if ( index === 0 )
 			{
-				xmlString = '<testsuite name="'+test.name+'">\n';
+				xmlString = '<?xml version="1.0"?>\n';
+				xmlString += '<testsuites>\n';
+				xmlString += '<testsuite name="'+test.name+'">\n';
 			}
 			else
 			{
@@ -217,7 +220,8 @@ function writeJUnitXMLFile(tests)
 		
 	});
 	
-	xmlString += '</testsuite>';
+	xmlString += '</testsuite>\n';
+	xmlString += '</testsuites>';
 	
 	// Write XML to file
 	var fileloc = "/tmp/junit-buildresults.xml";	
