@@ -52,6 +52,6 @@ b) Add a post build action which tells Jenkins the location of the JUnit buildre
 
 Test report XMLs: `unit-testing-alloy-projects/junit-buildresults.xml`
 
-**That's it! This should do the trick. You are able to fully automate building your apps using a Contiuous Integration approach**
+**That's it! This should do the trick. You are able to fully automate building your apps using a Continuous Integration approach**
 
 I hope this will help some of you out. Get in touch with me at Twitter: [@webvakker](http://www.twitter.com/webvakker)
